@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap');
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #ff57b9 0%, #a704fd 100%);
+    --bg-gradient: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite; 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.75); 
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    width: 90%;
+    max-width: 450px;
+    animation: appear 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: scale(0.9) translateY(30px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.header {
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 30px;
+    background: var(--primary-gradient); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.form-input {
+    margin-bottom: 18px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 15px;
+    border-radius: 18px;
+    transition: 0.3s;
+}
+
+.form-input:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+.header-form {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+input[type="text"], input[type="number"], textarea {
+    border: 2px solid transparent;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #a704fd;
+    box-shadow: 0 0 15px rgba(167, 4, 253, 0.2);
+}
+
+.button {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px; 
+    font-size: 18px;
+    font-weight: 500;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(167, 4, 253, 0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(167, 4, 253, 0.4);
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+input[type="radio"], input[type="checkbox"] {
+    accent-color: #a704fd; 
+    transform: scale(1.2);
+    margin-right: 5px;
+}
